@@ -1,0 +1,4 @@
+[
+{ "Label": "Type de Collection", "xpath": "//tei:title[@type='alt'][2]//tei:tag" }, 
+{ "Label": "Type de vente", "xpath": "//tei:title[@type='alt'][1]//tei:tag" }
+]

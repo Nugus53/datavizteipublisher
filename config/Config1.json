@@ -1,0 +1,3 @@
+[
+{ "Label": "Language", "xpath": "//tei:langUsage/tei:language/@ident", "Facet": "facet-language" }
+]

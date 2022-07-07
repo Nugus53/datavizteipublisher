@@ -1,0 +1,6 @@
+html{
+    --pb-gui-background:whitesmoke;
+    --pb-gui-stroke-hover:orange;
+    --pb-gui-stroke-primary:black;
+    --pb-gui-stroke-secondary:grey;
+}
