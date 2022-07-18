@@ -2,7 +2,7 @@ class pbBarChart extends HTMLElement {
     constructor() {
         super();
         this.shadowDOM = this.attachShadow({ mode: 'open' })
-        this.shadowDOM.innerHTML=`
+        this.shadowDOM.innerHTML = `
         <style>
                 svg{
                     background-color:var(--pb-gui-background);
@@ -25,55 +25,87 @@ class pbBarChart extends HTMLElement {
                 background-color: white;}
                 
                 
+                info{
+                    box-shadow: 0 5px 15px rgb(0 0 0 / 8%);
+                }
+                info:hover{
+                    width:33%
+                }
+                info div{
+                    display:none
+                }
+                info:hover div{
+                    display:block
+                }
+                
         </style>`
-        
-        
+
+        if (this.getAttribute('info')) {
+            var info = document.createElement("info")
+            var icon = document.createElement("span")
+            icon.innerHTML = `<paper-icon-button icon="info-outline"/>`
+
+            var div = document.createElement("div")
+            div.innerHTML = this.getAttribute('info')
+
+            info.appendChild(icon)
+            info.appendChild(div)
+
+
+            info.style.background = 'white'
+            info.style.position = 'absolute'
+            info.style.right = '1%'
+
+            this.shadowDOM.appendChild(info)
+
+        }
+
         this.xmlDOM = new Array()
         this._setSVG()
-        
+
         this._configdata()
-        
-        
+
+
     }
-    
-    async _configdata(){
-        var response= await fetch("/exist/rest/db/apps/"+this.getAttribute('config'), {
-  headers: {
-    'Accept': 'application/json'
-  }
-}) 
-this.config= await response.json()
-console.log('json',this.config)
-        
+
+    async _configdata() {
+        var response = await fetch("/exist/rest/db/apps/" + this.getAttribute('config'), {
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        this.config = await response.json()
+        console.log('json', this.config)
+
     }
-    
-    _setSVG(){
+
+    _setSVG() {
         this.svg = document.createElementNS("http://www.w3.org/2000/svg", "svg")
         this.svg.setAttribute('xmlns', "http://www.w3.org/2000/svg")
-        
+
         this.shadowDOM.appendChild(this.svg)
     }
-    
+
     connectedCallback() {
         var TH = this
         this.parentNode.addEventListener("data", function (e) {
             TH._refresh(e.detail)
-            
-            
+
+
         });
     }
     _refresh(liste) {
-        
+
         this.dataList = []
         this.config.forEach(path => {
             var listToDict = {}
             var values = []
-           liste.forEach(data => {
-               
+            liste.forEach(data => {
+
                 values.push(document.evaluate(path['xpath'], data, this._nsResolver, XPathResult.STRING_TYPE, null).stringValue)
             })
-            
-            
+
+
             values = values.filter(function (f) { return f !== '' })
             values.forEach(
                 function (v, i) {
@@ -91,9 +123,9 @@ console.log('json',this.config)
                 }
             ))
             this.dataList[path['Label']] = result.sort(this._compareValues('Percent'))
-        }); 
+        });
         console.log(this.dataList)
-        
+
         this._affichage()
     }
     _affichage() {

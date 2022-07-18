@@ -1,10 +1,7 @@
-# Composants Web Visualisationz de données pour TEI-Publisher
+# Composants Web Visualisation de données pour TEI-Publisher
 
 ## Introduction
-
-Le dépôt est un Proof of Concept de composant web dédié à la visualisation de données dans TEI-Publisher.
-Le Proof of Concept repose sur deux principes simple :  la réutilisabité du projet par les créateurs de plateforme Tei-publisher et de permettre aux visiteurs une meilleur intelligibité de la donnée.
-
+Le dépôt est un prof of concept de composant web dédié à la visualisation de données dans TEI-Publisher. Le prof of concept repose sur deux principes simples : la réutilisabilité du projet par les créateurs de plateforme Tei-publisher et de permettre aux visiteurs une meilleure intelligibilité de la donnée.
 ## Table des matières
  * [Installation](#Installation)
  * [listes de balises](#Liste_de_balises)
@@ -12,7 +9,7 @@ Le Proof of Concept repose sur deux principes simple :  la réutilisabité du pr
     - [pb-gui-bar-chart](#pb-gui-bar-chart)
 
     
-## Instalation
+## Installation
 
 Téléverser le fichier dans le dossier ressources/scripts de votre application TEI Publisher
 
@@ -52,7 +49,8 @@ Il s'agit de la balise qui transmet les informations aux balises enfants
 - **--pb-gui-stroke-hover** 
 
 **Les attributs :**
-- **titre \* :** Défénit le titre du graphique
+- **title \* :** Défénit le titre du graphique
+* **info \* :** Défénit le carré d'information
 - **config \* :**  Défénit le chemin vers le JSON de configuration
     - Label \* : le titre de la bar
     - xpath \* : la rêquete xpath a évectuer dans les fichiers
