@@ -42,6 +42,10 @@ Il s'agit de la balise qui transmet les informations aux balises enfants
 ```
 
 ### pb-gui-bar-chart
+
+![img/Img1.png](img/Img1.png)
+
+
 **Les variables Css :**
 - **--pb-gui-background** 
 - **--pb-gui-stroke-primary** 
@@ -50,7 +54,7 @@ Il s'agit de la balise qui transmet les informations aux balises enfants
 
 **Les attributs :**
 - **title \* :** Défénit le titre du graphique
-* **info \* :** Défénit le carré d'information
+* **info :** Défénit le carré d'information
 - **config \* :**  Défénit le chemin vers le JSON de configuration
     - Label \* : le titre de la bar
     - xpath \* : la rêquete xpath a évectuer dans les fichiers
