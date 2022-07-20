@@ -7,8 +7,7 @@ Le dépôt est un prof of concept de composant web dédié à la visualisation d
  * [listes de balises](#Liste_de_balises)
     - [pb-gui-frame](#pb-gui-frame)
     - [pb-gui-bar-chart](#pb-gui-bar-chart)
-
-    
+      
 ## Installation
 
 Téléverser le fichier dans le dossier ressources/scripts de votre application TEI Publisher
@@ -69,5 +68,3 @@ Il s'agit de la balise qui transmet les informations aux balises enfants
             }
         ]
         ```
-
-
