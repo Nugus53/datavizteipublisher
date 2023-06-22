@@ -52,11 +52,11 @@ Il s'agit de la balise qui transmet les informations aux balises enfants
 - **--pb-gui-stroke-hover** 
 
 **Les attributs :**
-- **title \* :** Défénit le titre du graphique
-* **info :** Défénit le carré d'information
-- **config \* :**  Défénit le chemin vers le JSON de configuration
+- **title \* :** Défini  le titre du graphique
+* **info :** Défini le carré d'information
+- **config \* :**  Défini  le chemin vers le JSON de configuration
     - Label \* : le titre de la bar
-    - xpath \* : la rêquete xpath a évectuer dans les fichiers
+    - xpath \* : la rêquete xpath a éffectuer dans les fichiers
     - Facet : la facet liée à la bar
     - Exemple :     
         ```
